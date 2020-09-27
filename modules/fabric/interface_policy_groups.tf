@@ -5,4 +5,5 @@ resource "aci_pcvpc_interface_policy_group" "lacp_active_vpc_interface_policy_gr
     relation_infra_rs_lldp_if_pol = "${aci_lldp_interface_policy.lldp_on_interface_policy.id}"
     relation_infra_rs_cdp_if_pol  = "${aci_cdp_interface_policy.cdp_off_interface_policy.id}"
     relation_infra_rs_lacp_pol    = "${aci_lacp_policy.lacp_active_port_channel_policy.id}"
+    relation_infra_rs_att_ent_p   = "${aci_attachable_access_entity_profile.PNF_AAEP.id}"
 }
