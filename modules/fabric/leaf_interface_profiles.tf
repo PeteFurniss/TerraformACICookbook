@@ -13,7 +13,7 @@ resource "aci_access_port_selector" "Leaf_Pair_Port_Selector" {
     leaf_interface_profile_dn  = "${aci_leaf_interface_profile.Leaf_Pair_IF_Profile[each.value.leaf_pair].id}"
     name                       = "Leaf${each.value.leaf_pair}_Port${each.value.card_port}_Selector"
     access_port_selector_type  = "range"
-    relation_infra_rs_acc_base_grp = "${aci_pcvpc_interface_policy_group.lacp_active_vpc_interface_policy_group.id}"
+    relation_infra_rs_acc_base_grp = "${aci_leaf_access_port_policy_group.lacp_active_leaf_access_port_policy_group.id}"
 }
 
 resource "aci_access_port_block" "Leaf_Pair_Port_Block" {

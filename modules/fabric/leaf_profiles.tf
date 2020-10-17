@@ -5,7 +5,7 @@ resource "aci_leaf_profile" "Leaf_Pair_Profile" {
     relation_infra_rs_acc_port_p = [aci_leaf_interface_profile.Leaf_Pair_IF_Profile[each.key].id]
 }
 
-resource "aci_switch_association" "Leaf_Pair_Profile_Selector" {
+resource "aci_leaf_selector" "Leaf_Pair_Profile_Selector" {
     for_each                = toset(var.leaf_pair_list)
     leaf_profile_dn         = "${aci_leaf_profile.Leaf_Pair_Profile[each.key].id}"
     name                    = "Leaf${split("-", each.value)[0]}-${split("-", each.value)[1]}_Profile_Selector"
@@ -14,7 +14,7 @@ resource "aci_switch_association" "Leaf_Pair_Profile_Selector" {
 
 resource "aci_node_block" "Leaf_Pair_Names" {
     for_each                = toset(var.leaf_pair_list)
-    switch_association_dn   = "${aci_switch_association.Leaf_Pair_Profile_Selector[each.key].id}"
+    switch_association_dn   = "${aci_leaf_selector.Leaf_Pair_Profile_Selector[each.key].id}"
     name                    = "Leaf_Pair${split("-", each.value)[0]}-${split("-", each.value)[1]}"
     from_                   = "${split("-", each.value)[0]}"
     to_                     = "${split("-", each.value)[1]}"

@@ -5,10 +5,6 @@ provider "aci" {
     insecure    = true
 }
 
-data "aci_physical_domain" "BareMetal" {
-    name = "BareMetal"
-}
-
 module "fabric" {
     source = "../modules/fabric"
 
@@ -16,8 +12,14 @@ module "fabric" {
     leaf_port_list = ["1-1", "1-2", "1-3", "1-4", "1-5", "1-6", "1-7", "1-8", "1-9"]
 }
 
+data "aci_physical_domain" "BareMetal" {
+    name =       "BareMetal"
+    depends_on = [module.fabric]
+}
+
 module "tenant" {
     source = "../modules/tenant"
+    depends_on = [module.fabric]
 
     physical_domain = data.aci_physical_domain.BareMetal.id
 
