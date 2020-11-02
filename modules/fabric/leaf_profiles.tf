@@ -25,4 +25,5 @@ resource "aci_vpc_explicit_protection_group" "VPC_Explicit_Protection_Group" {
     name                    = "VPC_Protection_Group_Leaf_Pair${split("-", each.value)[0]}-${split("-", each.value)[1]}"
     switch1                 = "${split("-", each.value)[0]}"
     switch2                 = "${split("-", each.value)[1]}"
+    vpc_explicit_protection_group_id = tostring(tonumber("${split("-", each.value)[0]}")+100)
 }
