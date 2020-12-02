@@ -33,10 +33,12 @@ module "application" {
     source     = "../modules/application"
     depends_on = [module.tenant]
 
-    ap_list    = csvdecode(file("${path.module}/application_profiles.csv"))
-    epg_list   = csvdecode(file("${path.module}/epgs.csv"))
+    ap_list                   = csvdecode(file("${path.module}/application_profiles.csv"))
+    epg_list                  = csvdecode(file("${path.module}/epgs.csv"))
+    epg_to_static_path_list   = csvdecode(file("${path.module}/epgs_to_static_paths.csv"))
+    epg_to_domain_list        = csvdecode(file("${path.module}/epgs_to_domains.csv"))
 
-    tenant     = data.aci_tenant.PNF_Tenant.id
+    tenant          = data.aci_tenant.PNF_Tenant.id
     physical_domain = data.aci_physical_domain.BareMetal.id
 }
 

@@ -8,6 +8,16 @@ variable "epg_list" {
     type        = list(map(string))
 }
 
+variable "epg_to_static_path_list" {
+    description = "A list of the EPG to Static Path mappings"
+    type        = list(map(string))
+}
+
+variable "epg_to_domain_list" {
+    description = "A list of the EPG to Domain mappings"
+    type        = list(map(string))
+}
+
 variable "tenant" {
     description = "The Tenant DN"
     type        = string

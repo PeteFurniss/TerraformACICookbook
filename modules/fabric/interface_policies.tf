@@ -15,7 +15,7 @@ resource "aci_lacp_policy" "lacp_active_port_channel_policy" {
     description = "Switches an interface to LACP Active mode"
     name        = "lacp_active_port_channel_policy"
 # Following line commented-out due to bug #126 in Terraform 0.13.4/ACI
-#    ctrl        = "fast-sel-hot-stdby,graceful-conv,susp-individual"
-    ctrl        = "fast-sel-hot-stdby"
+    ctrl        = ["fast-sel-hot-stdby","graceful-conv","susp-individual"]
+#    ctrl        = "fast-sel-hot-stdby"
     mode        = "active"
 }
