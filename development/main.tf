@@ -40,8 +40,12 @@ module "application" {
     contract_list             = csvdecode(file("${path.module}/contracts.csv"))
     epg_to_contract_list      = csvdecode(file("${path.module}/epgs_to_contracts.csv"))
     contract_subject_list     = csvdecode(file("${path.module}/contract_subjects.csv"))
+    filter_list               = csvdecode(file("${path.module}/filters.csv"))
+    filter_entry_list         = csvdecode(file("${path.module}/filter_entries.csv"))
 
-    tenant          = data.aci_tenant.PNF_Tenant.id
-    physical_domain = data.aci_physical_domain.BareMetal.id
+    existing_filter_list      = csvdecode(file("${path.module}/existing_filters.csv"))
+
+    tenant                    = data.aci_tenant.PNF_Tenant.id
+    physical_domain           = data.aci_physical_domain.BareMetal.id
 }
 

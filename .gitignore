@@ -1,4 +1,5 @@
 **/terraform.tfstate*
 **/*.tf.*
+**/*.csv.*
 **/.terraform
 **/.BAK

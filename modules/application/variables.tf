@@ -33,6 +33,21 @@ variable "contract_subject_list" {
     type        = list(map(string))
 }
 
+variable "filter_list" {
+    description = "A list of the Filters"
+    type        = list(map(string))
+}
+
+variable "filter_entry_list" {
+    description = "A list of the Filter Entries"
+    type        = list(map(string))
+}
+
+variable "existing_filter_list" {
+    description = "A list of existing filters to attach to Contract Subjects"
+    type        = list(map(string))
+}
+
 variable "tenant" {
     description = "The Tenant DN"
     type        = string

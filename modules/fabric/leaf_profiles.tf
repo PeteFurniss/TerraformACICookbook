@@ -2,7 +2,7 @@ resource "aci_leaf_profile" "Leaf_Pair_Profile" {
     for_each                     = { for leaf_pair in var.leaf_pair_map : leaf_pair.leaf_pair_id => leaf_pair }
     name                         = "Leaf${split("-", each.value.leaf_pair_name)[0]}-${split("-", each.value.leaf_pair_name)[1]}_Profile"
     description                  = "PF Leaf ${split("-", each.value.leaf_pair_name)[0]} ${split("-", each.value.leaf_pair_name)[1]} Pair Profile"
-#    relation_infra_rs_acc_port_p = [aci_leaf_interface_profile.Leaf_Pair_IF_Profile[each.key].id]
+    relation_infra_rs_acc_port_p = [aci_leaf_interface_profile.Leaf_Pair_IF_Profile[each.key].id]
 }
 
 resource "aci_leaf_selector" "Leaf_Pair_Profile_Selector" {

@@ -1,2 +1,2 @@
 consub_id,con_id,consub_name,consub_annotation,consub_cons_match_t,consub_name_alias,consub_prio,consub_prov_match_t,consub_rev_flt_ports,consub_target_dscp,consub_relation_vz_rs_subj_graph_att,consub_relation_vz_rs_sdwan_pol,consub_relation_vz_rs_subj_filt_att
-CONSUB01,CON01,PNF_Web_Traffic_Contract_Subject,,AtleastOne,,unspecified,AtleastOne,yes,unspecified,,,
+CONSUB01,CON01,PNF_Web_Traffic_Contract_Subject,,AtleastOne,,unspecified,AtleastOne,yes,unspecified,,,EXISTING_FILTER01
