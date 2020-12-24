@@ -48,9 +48,14 @@ variable "existing_filter_list" {
     type        = list(map(string))
 }
 
-variable "tenant" {
-    description = "The Tenant DN"
-    type        = string
+variable "tenant_reference_list" {
+    description = "A list of references to Tenant created outside this module"
+    type        = list(map(string))
+}
+
+variable "bridge_domain_reference_list" {
+    description = "A list of references to Bridge Domains created outside this module"
+    type        = list(map(string))
 }
 
 variable "physical_domain" {

@@ -1,2 +1,2 @@
-ap_id,ap_name,ap_annotation,ap_name_alias,ap_prio,ap_relation_fv_rs_ap_mon_pol
-AP01,PNF_App1,,,unspecified,
+ap_id,tenant_id,ap_name,ap_annotation,ap_name_alias,ap_prio,ap_relation_fv_rs_ap_mon_pol
+AP01,TENANT01,PNF_App1,,,unspecified,uni/tn-common/monepg-default

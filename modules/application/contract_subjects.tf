@@ -1,7 +1,9 @@
 data "aci_filter" "Existing_Filter" {
     for_each                       = { for existing_filter in var.existing_filter_list : existing_filter.existing_filter_id => existing_filter }
-    tenant_dn                      = var.tenant
+    tenant_dn                      = data.aci_tenant.Tenant_References[each.value.tenant_id].id
     name                           = each.value.existing_filter_name
+
+    depends_on                     = [aci_filter.Filter]
 }
 
 resource "aci_contract_subject" "Contract_Subject" {

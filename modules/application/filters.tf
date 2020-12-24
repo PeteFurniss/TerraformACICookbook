@@ -1,6 +1,6 @@
 resource "aci_filter" "Filter" {
     for_each                        = { for filt in var.filter_list : filt.filt_id => filt }
-    tenant_dn                       = var.tenant
+    tenant_dn                       = data.aci_tenant.Tenant_References[each.value.tenant_id].id
     name                            = each.value.filt_name
     annotation                      = each.value.filt_annotation
     name_alias                      = each.value.filt_name_alias
