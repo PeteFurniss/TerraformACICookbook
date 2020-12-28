@@ -8,3 +8,13 @@ data "aci_bridge_domain" "BD_References" {
     tenant_dn                      = data.aci_tenant.Tenant_References[each.value.tenant_id].id
     name                           = each.value.bd_name
 }
+
+
+data "aci_filter" "Filter_References" {
+    for_each                       = { for filter_reference in var.filter_reference_list : filter_reference.filter_id => filter_reference }
+    tenant_dn                      = data.aci_tenant.Tenant_References[each.value.tenant_id].id
+    name                           = each.value.filter_name
+
+    depends_on                     = [aci_filter.Filter]
+}
+

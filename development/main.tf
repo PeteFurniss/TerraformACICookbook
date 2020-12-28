@@ -52,7 +52,7 @@ module "application" {
     filter_list                  = csvdecode(file("${path.module}/filters.csv"))
     filter_entry_list            = csvdecode(file("${path.module}/filter_entries.csv"))
 
-    existing_filter_list         = csvdecode(file("${path.module}/existing_filters.csv"))
+    filter_reference_list        = csvdecode(file("${path.module}/filter_references.csv"))
     tenant_reference_list        = csvdecode(file("${path.module}/tenant_references.csv"))
     bridge_domain_reference_list = csvdecode(file("${path.module}/bridge_domain_references.csv"))
 

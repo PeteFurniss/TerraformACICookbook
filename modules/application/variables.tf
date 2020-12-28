@@ -43,8 +43,8 @@ variable "filter_entry_list" {
     type        = list(map(string))
 }
 
-variable "existing_filter_list" {
-    description = "A list of existing filters to attach to Contract Subjects"
+variable "filter_reference_list" {
+    description = "A list of references to Filters to attach to Contract Subjects"
     type        = list(map(string))
 }
 

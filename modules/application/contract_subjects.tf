@@ -1,11 +1,3 @@
-data "aci_filter" "Existing_Filter" {
-    for_each                       = { for existing_filter in var.existing_filter_list : existing_filter.existing_filter_id => existing_filter }
-    tenant_dn                      = data.aci_tenant.Tenant_References[each.value.tenant_id].id
-    name                           = each.value.existing_filter_name
-
-    depends_on                     = [aci_filter.Filter]
-}
-
 resource "aci_contract_subject" "Contract_Subject" {
 
     for_each                       = { for consub in var.contract_subject_list : consub.consub_id => consub }
@@ -20,5 +12,5 @@ resource "aci_contract_subject" "Contract_Subject" {
     target_dscp                    = each.value.consub_target_dscp
     relation_vz_rs_subj_graph_att  = each.value.consub_relation_vz_rs_subj_graph_att
     relation_vz_rs_sdwan_pol       = each.value.consub_relation_vz_rs_sdwan_pol
-    relation_vz_rs_subj_filt_att   = toset([for filter_id in split("|", each.value.consub_relation_vz_rs_subj_filt_att) : data.aci_filter.Existing_Filter[filter_id].id])
+    relation_vz_rs_subj_filt_att   = toset([for filter_id in split("|", each.value.consub_relation_vz_rs_subj_filt_att) : data.aci_filter.Filter_References[filter_id].id])
 }
