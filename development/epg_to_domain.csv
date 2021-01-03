@@ -1,2 +1,2 @@
 e2d_id,epg_id,e2d_annotation,e2d_binding_type,e2d_allow_micro_seg,e2d_delimiter,e2d_encap,e2d_encap_mode,e2d_epg_cos,e2d_epg_cos_pref,e2d_instr_imedcy,e2d_lag_policy_name,e2d_netflow_dir,e2d_netflow_pref,e2d_num_ports,e2d_port_allocation,e2d_primary_encap,e2d_primary_encap_inner,e2d_res_imedcy,e2d_secondary_encap_inner,e2d_switching_mode,e2d_vmm_allow_promiscuous,e2d_vmm_forged_transmits,e2d_vmm_mac_changes
-E2D01,EPG01,,none,false,|,,auto,Cos0,disabled,lazy,,both,disabled,,,,,lazy,,native,,,
+E2D01_EXAMPLE_EPG_TO_DOMAIN,EPG01_EXAMPLE_EPG,,none,FALSE,|,,auto,Cos0,disabled,lazy,,both,disabled,,,,,lazy,,native,,,

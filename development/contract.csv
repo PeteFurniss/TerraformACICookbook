@@ -1,0 +1,2 @@
+con_id,tenant_id,con_name,con_annotation,con_name_alias,con_prio,con_scope,con_target_dscp,con_relation_vz_rs_graph_att
+CON01_EXAMPLE_CONTRACT,TN01_EXAMPLE_TENANT,EXAMPLE_CONTRACT01,,,unspecified,context,unspecified,

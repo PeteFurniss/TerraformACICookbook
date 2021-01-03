@@ -33,8 +33,8 @@ module "tenant" {
     physical_domain = data.aci_physical_domain.BareMetal.id
 }
 
-data "aci_tenant" "PNF_Tenant" {
-    name       = "PNF_Tenant"
+data "aci_tenant" "tenant" {
+    name       = "EXAMPLE_TENANT01"
     depends_on = [module.tenant]
 }
 
@@ -42,15 +42,15 @@ module "application" {
     source     = "../modules/application"
     depends_on = [module.tenant]
 
-    ap_list                      = csvdecode(file("${path.module}/application_profiles.csv"))
-    epg_list                     = csvdecode(file("${path.module}/epgs.csv"))
-    epg_to_static_path_list      = csvdecode(file("${path.module}/epgs_to_static_paths.csv"))
-    epg_to_domain_list           = csvdecode(file("${path.module}/epgs_to_domains.csv"))
-    contract_list                = csvdecode(file("${path.module}/contracts.csv"))
-    epg_to_contract_list         = csvdecode(file("${path.module}/epgs_to_contracts.csv"))
-    contract_subject_list        = csvdecode(file("${path.module}/contract_subjects.csv"))
-    filter_list                  = csvdecode(file("${path.module}/filters.csv"))
-    filter_entry_list            = csvdecode(file("${path.module}/filter_entries.csv"))
+    application_profile_list     = csvdecode(file("${path.module}/application_profile.csv"))
+    application_epg_list         = csvdecode(file("${path.module}/application_epg.csv"))
+    epg_to_static_path_list      = csvdecode(file("${path.module}/epg_to_static_path.csv"))
+    epg_to_domain_list           = csvdecode(file("${path.module}/epg_to_domain.csv"))
+    contract_list                = csvdecode(file("${path.module}/contract.csv"))
+    epg_to_contract_list         = csvdecode(file("${path.module}/epg_to_contract.csv"))
+    contract_subject_list        = csvdecode(file("${path.module}/contract_subject.csv"))
+    filter_list                  = csvdecode(file("${path.module}/filter.csv"))
+    filter_entry_list            = csvdecode(file("${path.module}/filter_entry.csv"))
 
     filter_reference_list        = csvdecode(file("${path.module}/filter_references.csv"))
     tenant_reference_list        = csvdecode(file("${path.module}/tenant_references.csv"))
