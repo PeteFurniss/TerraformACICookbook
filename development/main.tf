@@ -8,7 +8,7 @@ provider "aci" {
 
 # Use for Always-On Sandbox
 #provider "aci" {
-#    username    = "admin"
+#    username    = "apic:\\\\admin"
 #    password    = "ciscopsdt"
 #    url         = "https://sandboxapicdc.cisco.com"
 #    insecure    = true

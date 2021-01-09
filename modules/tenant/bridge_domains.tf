@@ -1,4 +1,4 @@
-resource "aci_bridge_domain" "PNF_BD" {
-    tenant_dn = "${aci_tenant.PNF_Tenant.id}"
-    name = "PNF_Bridge_Domain"
+resource "aci_bridge_domain" "bridge_domain" {
+    tenant_dn = "${aci_tenant.tenant.id}"
+    name = "EXAMPLE_BRIDGE_DOMAIN01"
 }

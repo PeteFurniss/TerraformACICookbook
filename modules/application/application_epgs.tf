@@ -1,5 +1,5 @@
 resource "aci_application_epg" "App_EPG" {
-    for_each                    = { for epg in var.epg_list : epg.epg_id => epg }
+    for_each                    = { for epg in var.application_epg_list : epg.epg_id => epg }
     application_profile_dn      = "${aci_application_profile.App_Profile[each.value.ap_id].id}"
     name                        = each.value.epg_name
     annotation                  = each.value.epg_annotation

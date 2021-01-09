@@ -1,9 +1,9 @@
-variable "ap_list" {
+variable "application_profile_list" {
     description = "A list of the application profiles"
     type        = list(map(string))
 }
 
-variable "epg_list" {
+variable "application_epg_list" {
     description = "A list of the EPGs"
     type        = list(map(string))
 }
