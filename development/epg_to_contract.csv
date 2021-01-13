@@ -1,2 +1,0 @@
-e2c_id,epg_id,con_id,e2c_contract_type,e2c_annotation,e2c_match_t,e2c_prio
-E2C_01_EXAMPLE_EPG_TO_CONTRACT,EPG01_EXAMPLE_EPG,CON01_EXAMPLE_CONTRACT,provider,,AtleastOne,unspecified

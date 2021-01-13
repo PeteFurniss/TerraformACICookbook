@@ -1,0 +1,2 @@
+cn_id,tn_id,cn_name,cn_annotation,cn_name_alias,cn_prio,cn_scope,cn_target_dscp,cn_relation_vz_rs_graph_att
+CN01_EXAMPLE_CONTRACT,TN01_EXAMPLE_TENANT,EXAMPLE_CONTRACT01,,,unspecified,context,unspecified,

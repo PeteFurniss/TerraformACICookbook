@@ -1,0 +1,2 @@
+ft_id,tn_id,ft_name,ft_annotation,ft_name_alias,ft_relation_vz_rs_filt_graph_att,ft_relation_vz_rs_fwd_r_flt_p_att,ft_relation_vz_rs_rev_r_flt_p_att
+FT01_EXAMPLE_FILTER,TN01_EXAMPLE_TENANT,EXAMPLE_FILTER01,,,,,

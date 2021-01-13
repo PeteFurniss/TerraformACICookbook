@@ -1,0 +1,10 @@
+es_id,ae_id,es_pod_id,es_logical_pair_id,es_port_name,es_annotation,es_encap,es_instr_imedcy,es_mode,es_primary_encap
+ES01,AE01_EXAMPLE_EPG,1,303,eth1/1,,vlan-3000,lazy,untagged,
+ES02,AE01_EXAMPLE_EPG,1,303,eth1/2,,vlan-3000,lazy,untagged,
+ES03,AE01_EXAMPLE_EPG,1,303,eth1/3,,vlan-3000,lazy,untagged,
+ES04,AE01_EXAMPLE_EPG,1,303,eth1/4,,vlan-3000,lazy,untagged,
+ES05,AE01_EXAMPLE_EPG,1,303,eth1/5,,vlan-3000,lazy,untagged,
+ES06,AE01_EXAMPLE_EPG,1,303,eth1/6,,vlan-3000,lazy,untagged,
+ES07,AE01_EXAMPLE_EPG,1,303,eth1/7,,vlan-3000,lazy,untagged,
+ES08,AE01_EXAMPLE_EPG,1,303,eth1/8,,vlan-3000,lazy,untagged,
+ES09,AE01_EXAMPLE_EPG,1,303,eth1/9,,vlan-3000,lazy,untagged,

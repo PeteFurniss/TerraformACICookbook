@@ -1,6 +1,6 @@
-resource "aci_application_profile" "App_Profile" {
+resource "aci_application_profile" "application_profile" {
     for_each                  = { for ap in var.application_profile_list : ap.ap_id => ap }
-    tenant_dn                 = data.aci_tenant.Tenant_References[each.value.tenant_id].id
+    tenant_dn                 = data.aci_tenant.tenant_references[each.value.tn_id].id
     name                      = each.value.ap_name
     annotation                = each.value.ap_annotation
     name_alias                = each.value.ap_name_alias

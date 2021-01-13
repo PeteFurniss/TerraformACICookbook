@@ -53,12 +53,22 @@ variable "tenant_reference_list" {
     type        = list(map(string))
 }
 
+variable "contract_reference_list" {
+    description = "A list of references to Contracts created outside this module"
+    type        = list(map(string))
+}
+
 variable "bridge_domain_reference_list" {
     description = "A list of references to Bridge Domains created outside this module"
     type        = list(map(string))
 }
 
-variable "physical_domain" {
-    description = "The id of the physical domain created in the fabric module"
-    type        = string
+variable "physical_domain_reference_list" {
+    description = "A list of references to Physical Domains created outside this module"
+    type        = list(map(string))
+}
+
+variable "vmm_domain_reference_list" {
+    description = "A list of references to VMM Domains created outside this module"
+    type        = list(map(string))
 }
