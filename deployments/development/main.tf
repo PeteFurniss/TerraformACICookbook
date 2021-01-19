@@ -24,11 +24,17 @@ module "fabric" {
 module "tenant" {
     source = "../../modules/tenant"
     depends_on = [module.fabric]
+
+    tenant_list                    = csvdecode(file("${path.module}/tenant.csv"))
 }
 
-data "aci_tenant" "tenant" {
-    name       = "EXAMPLE_TENANT01"
+module "bridge_domain" {
+    source = "../../modules/bridge_domain"
     depends_on = [module.tenant]
+
+    bridge_domain_list             = csvdecode(file("${path.module}/bridge_domain.csv"))
+
+    tenant_reference_list          = csvdecode(file("${path.module}/tenant_references.csv"))
 }
 
 module "filter" {
@@ -54,7 +60,7 @@ module "contract" {
 
 module "application" {
     source     = "../../modules/application"
-    depends_on = [module.tenant, module.contract]
+    depends_on = [module.tenant, module.bridge_domain, module.contract]
 
     application_profile_list       = csvdecode(file("${path.module}/application_profile.csv"))
     application_epg_list           = csvdecode(file("${path.module}/application_epg.csv"))
