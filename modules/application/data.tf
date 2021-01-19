@@ -21,19 +21,9 @@ data "aci_bridge_domain" "bridge_domain_references" {
 }
 
 
-data "aci_filter" "filter_references" {
-    for_each                       = { for ft_reference in var.filter_reference_list : ft_reference.ft_id => ft_reference }
-    tenant_dn                      = data.aci_tenant.tenant_references[each.value.tn_id].id
-    name                           = each.value.ft_name
-
-    depends_on                     = [aci_filter.filter]
-}
-
 data "aci_contract" "contract_references" {
     for_each                       = { for cn_reference in var.contract_reference_list : cn_reference.cn_id => cn_reference }
     tenant_dn                      = data.aci_tenant.tenant_references[each.value.tn_id].id
     name                           = each.value.cn_name
-
-    depends_on                     = [aci_contract.contract]
 }
 

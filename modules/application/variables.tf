@@ -18,33 +18,8 @@ variable "epg_to_domain_list" {
     type        = list(map(string))
 }
 
-variable "contract_list" {
-    description = "A list of the Contracts"
-    type        = list(map(string))
-}
-
 variable "epg_to_contract_list" {
     description = "A list of the EPG to Contract mappings"
-    type        = list(map(string))
-}
-
-variable "contract_subject_list" {
-    description = "A list of the Contract Subjects"
-    type        = list(map(string))
-}
-
-variable "filter_list" {
-    description = "A list of the Filters"
-    type        = list(map(string))
-}
-
-variable "filter_entry_list" {
-    description = "A list of the Filter Entries"
-    type        = list(map(string))
-}
-
-variable "filter_reference_list" {
-    description = "A list of references to Filters to attach to Contract Subjects"
     type        = list(map(string))
 }
 

@@ -31,24 +31,40 @@ data "aci_tenant" "tenant" {
     depends_on = [module.tenant]
 }
 
+module "filter" {
+    source     = "../../modules/filter"
+    depends_on = [module.tenant]
+
+    filter_list                    = csvdecode(file("${path.module}/filter.csv"))
+    filter_entry_list              = csvdecode(file("${path.module}/filter_entry.csv"))
+
+    tenant_reference_list          = csvdecode(file("${path.module}/tenant_references.csv"))
+}
+
+module "contract" {
+    source     = "../../modules/contract"
+    depends_on = [module.tenant, module.filter]
+
+    contract_list                  = csvdecode(file("${path.module}/contract.csv"))
+    contract_subject_list          = csvdecode(file("${path.module}/contract_subject.csv"))
+
+    tenant_reference_list          = csvdecode(file("${path.module}/tenant_references.csv"))
+    filter_reference_list          = csvdecode(file("${path.module}/filter_references.csv"))
+}
+
 module "application" {
     source     = "../../modules/application"
-    depends_on = [module.tenant]
+    depends_on = [module.tenant, module.contract]
 
     application_profile_list       = csvdecode(file("${path.module}/application_profile.csv"))
     application_epg_list           = csvdecode(file("${path.module}/application_epg.csv"))
     epg_to_static_path_list        = csvdecode(file("${path.module}/epg_to_static_path.csv"))
     epg_to_domain_list             = csvdecode(file("${path.module}/epg_to_domain.csv"))
-    contract_list                  = csvdecode(file("${path.module}/contract.csv"))
     epg_to_contract_list           = csvdecode(file("${path.module}/epg_to_contract.csv"))
-    contract_subject_list          = csvdecode(file("${path.module}/contract_subject.csv"))
-    filter_list                    = csvdecode(file("${path.module}/filter.csv"))
-    filter_entry_list              = csvdecode(file("${path.module}/filter_entry.csv"))
 
     physical_domain_reference_list = csvdecode(file("${path.module}/physical_domain_references.csv"))
     vmm_domain_reference_list      = csvdecode(file("${path.module}/vmm_domain_references.csv"))
     tenant_reference_list          = csvdecode(file("${path.module}/tenant_references.csv"))
-    filter_reference_list          = csvdecode(file("${path.module}/filter_references.csv"))
     contract_reference_list        = csvdecode(file("${path.module}/contract_references.csv"))
     bridge_domain_reference_list   = csvdecode(file("${path.module}/bridge_domain_references.csv"))
 }

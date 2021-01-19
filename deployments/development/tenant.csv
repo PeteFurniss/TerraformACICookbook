@@ -1,0 +1,2 @@
+tn_id,tn_name,tn_annotation,tn_name_alias,tn_relation_fv_rs_tn_deny_rule,tn_relation_fv_rs_tenant_mon_pol
+TN01_EXAMPLE_TENANT,EXAMPLE_TENANT01,,,,uni/tn-common/monepg-default
