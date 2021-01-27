@@ -1,0 +1,2 @@
+cs_id,tn_id,cn_id,cs_name,cs_annotation,cs_cons_match_t,cs_name_alias,cs_prio,cs_prov_match_t,cs_rev_flt_ports,cs_target_dscp,cs_relation_vz_rs_subj_graph_att,cs_relation_vz_rs_sdwan_pol,cs_relation_vz_rs_subj_filt_att
+CS01_EXAMPLE_CONTRACT_SUBJECT,TN01_EXAMPLE_TENANT,CN01_EXAMPLE_CONTRACT,EXAMPLE_CONTRACT_SUBJECT01,,AtleastOne,,unspecified,AtleastOne,yes,unspecified,,,FT01_EXAMPLE_FILTER

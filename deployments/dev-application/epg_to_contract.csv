@@ -1,0 +1,2 @@
+ec_id,ae_id,cn_id,ec_contract_type,ec_annotation,ec_match_t,ec_prio
+EC01_EXAMPLE_EPG_TO_CONTRACT,AE01_EXAMPLE_EPG,CN01_EXAMPLE_CONTRACT,provider,,AtleastOne,unspecified

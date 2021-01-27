@@ -1,0 +1,2 @@
+ap_id,tn_id,ap_name,ap_annotation,ap_name_alias,ap_prio,ap_relation_fv_rs_ap_mon_pol
+AP01_EXAMPLE_APP,TN01_EXAMPLE_TENANT,EXAMPLE_APP01,,,unspecified,uni/tn-common/monepg-default

@@ -1,0 +1,3 @@
+ed_id,ae_id,ed_domain_type,do_id,ed_annotation,ed_binding_type,ed_allow_micro_seg,ed_delimiter,ed_encap,ed_encap_mode,ed_epg_cos,ed_epg_cos_pref,ed_instr_imedcy,ed_lag_policy_name,ed_netflow_dir,ed_netflow_pref,ed_num_ports,ed_port_allocation,ed_primary_encap,ed_primary_encap_inner,ed_res_imedcy,ed_secondary_encap_inner,ed_switching_mode,ed_vmm_allow_promiscuous,ed_vmm_forged_transmits,ed_vmm_mac_changes
+ED01_EXAMPLE_EPG_TO_PHYSICAL_DOMAIN,AE01_EXAMPLE_EPG,PHYSICAL,PD01_EXAMPLE_PHYSICAL_DOMAIN,,none,false,|,,auto,Cos0,disabled,lazy,,both,disabled,,,,,lazy,,native,,,
+ED02_EXAMPLE_EPG_TO_VMM_DOMAIN,AE01_EXAMPLE_EPG,VIRTUAL,VD01_EXAMPLE_VMM_DOMAIN,,none,false,|,,auto,Cos0,disabled,lazy,,both,disabled,,,,,lazy,,native,,,

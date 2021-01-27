@@ -1,0 +1,2 @@
+fe_id,ft_id,fe_name,fe_annotation,fe_apply_to_frag,fe_arp_opc,fe_d_from_port,fe_d_to_port,fe_ether_t,fe_icmpv4_t,fe_icmpv6_t,fe_match_dscp,fe_name_alias,fe_prot,fe_s_from_port,fe_s_to_port,fe_stateful,fe_tcp_rules
+FE01_EXAMPLE_FILTER_ENTRY,FT01_EXAMPLE_FILTER,EXAMPLE_FILTER_ENTRY01,,no,unspecified,unspecified,unspecified,unspecified,unspecified,unspecified,unspecified,,unspecified,unspecified,unspecified,no,unspecified
